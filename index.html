@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+</head>
+
+<body>
+
+    <h1>Student Management System</h1>
+
+    <input type="text" id="name" placeholder="Student Name">
+    <input type="text" id="roll" placeholder="Roll Number">
+
+    <button onclick="addStudent()">Add Student</button>
+
+    <h2>Students</h2>
+
+    <ul id="studentList"></ul>
+
+    <script>
+        function addStudent() {
+            let name = document.getElementById("name").value;
+            let roll = document.getElementById("roll").value;
+
+            if (name === "" || roll === "") {
+                alert("Please enter all details");
+                return;
+            }
+
+            let li = document.createElement("li");
+            li.innerText = name + " - Roll No: " + roll;
+
+            document.getElementById("studentList").appendChild(li);
+
+            document.getElementById("name").value = "";
+            document.getElementById("roll").value = "";
+        }
+    </script>
+
+</body>
+</html>
